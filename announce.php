@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$secretPhrase = "";
+include('config.php');
 
 require('recaptcha/src/autoload.php');
 $recaptcha = new \ReCaptcha\ReCaptcha('6LentBATAAAAAClsv5C-L76fJYC4PDiJMTEyi4df');
@@ -38,7 +38,8 @@ if($resp->isSuccess())
 		echo 'Account public key already broadcasted';
 	} else {
 		$data = array(
-			'requestType'=>'sendMessage',
+			'requestType'=>'sendMoney',
+			'amountNQT'=>200000000,
 			'recipient'=>$_POST['recipient'],
 			'recipientPublicKey'=>$_POST['publicKey'],
 			'message'=>'Account activation',
