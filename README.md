@@ -1,5 +1,14 @@
-Minimal Form Interface
+HZ Announce
 =========
+
+[HZ Announce](http://hzannounce.com) can be used to broadcast the public key of a new account.
+It will also send 2 HZ for the first transactions.
+
+The current implementation will always render a success message, even if the data entered is invalid.
+Result is logged to javascript console.
+
+
+Frontend created with Minimal Form Interface
 
 A simplistic form with inputs shown one at a time. Inspired by the form seen on the end of the [PageLanes website](http://www.pagelanes.com/).
 
