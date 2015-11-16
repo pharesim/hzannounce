@@ -11,7 +11,7 @@
 <script src="js/modernizr.custom.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
-<body contenteditable="true">
+<body contenteditable="false">
 <div class="container"> 
   <!-- Top Navigation -->
   <header class="codrops-header">
