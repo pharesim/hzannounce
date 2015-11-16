@@ -6,7 +6,6 @@ It will also send 2 HZ for the first transactions.
 
 The current implementation will always render a success message, even if the data entered is invalid.
 Result is logged to javascript console.
-It also strangely allows the visitor to edit the whole page. That's neat, but probably not intentional.
 
 
 Frontend created with Minimal Form Interface
