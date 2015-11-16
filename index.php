@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Minimal Form Interface</title>
+<title>HZAnnounce - Join The Horizon Network</title>
 <meta name="description" content="Minimal Form Interface: Simplistic, single input view form">
 <meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition">
 <meta name="author" content="Codrops">
