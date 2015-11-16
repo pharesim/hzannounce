@@ -32,6 +32,19 @@
       </div>
     </div>
   </header>
+  
+  <?php
+  $q1 = '';
+  if(isset($_GET['q1'])) {
+  	$q1 = htmlspecialchars($_GET['q1']);
+  }
+  
+  $q2 = '';
+  if(isset($_GET['q1'])) {
+  	$q2 = htmlspecialchars($_GET['q2']);
+  }
+  ?>
+  
   <div class="grid grid-pad">
     <div class="col-6-12" style="padding:50px; padding-top:0px; padding-bottom:0px;">
       <section class="related box effect2" style="text-align:left;">
@@ -41,12 +54,12 @@
               <li> <span>
                 <label for="q1">Step 1. Enter Your Wallet Address</label>
                 </span>
-                <input id="q1" name="q1" type="text" placeholder="NHZ-____-____-____-_____">
+                <input id="q1" name="q1" type="text" placeholder="NHZ-____-____-____-_____" value="<?=$q1?>">
               </li>
               <li> <span>
                 <label for="q2">Step 2. Enter Your Public Key</label>
                 </span>
-                <input id="q2" name="q2" type="text" placeholder="________________________________________________________________">
+                <input id="q2" name="q2" type="text" placeholder="________________________________________________________________" value="<?=$q2?>">
               </li>
               <li> <span>
                 <input type="hidden" value="void"/><div class="g-recaptcha" data-sitekey="6LentBATAAAAAJeXxfzhHZ_2c5Tt-1kYfVWdeZr1"></div>
