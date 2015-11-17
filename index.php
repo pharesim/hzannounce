@@ -133,13 +133,10 @@
                     }).done(function(data){
                       if(data == 'Account public key already broadcasted') {
                       	messageEl.innerHTML = 'Error!<br><span style="font-size:0.7em;">The public key for that account is already known to the network.</span>';
+                      } else if(data == 'Transaction error') {
+                        messageEl.innerHTML = 'Error!<br><span style="font-size:0.7em;">Transaction failed. Please check your data.</span>';
                       } else {
-                        var result = $.parseJSON(data); console.log(data);
-                        if(data.errorCode == 4) {
-                      	  messageEl.innerHTML = 'Error!<br><span style="font-size:0.7em;">Transaction failed. Please check your data.</span>';
-                        } else {
-                          messageEl.innerHTML = 'Congratulations!<br><span style="font-size:0.7em;">You have successfully announced<br>your Horizon account.</span>';
-                        }
+                        messageEl.innerHTML = 'Congratulations!<br><span style="font-size:0.7em;">You have successfully announced<br>your Horizon account.</span>';
                       }
                       
                       classie.addClass(messageEl, 'show');
