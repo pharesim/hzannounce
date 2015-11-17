@@ -78,7 +78,7 @@
         </form>
         <br>
         <br>
-        <h1 class="submargin">!nstructions</h1>
+        <h1 class="submargin">Instructions</h1>
         <h3 class="instructmargin">
           <ol>
             <li>Make sure that you have registered for a Horizon account and log into your wallet.</li>
@@ -121,8 +121,6 @@
 
                     // let's just simulate something...
                     var messageEl = theForm.querySelector('.final-message');
-                    messageEl.innerHTML = 'Congratulations!<br><span style="font-size:0.7em;">You have successfully announced<br>your Horizon account.</span>';
-                    classie.addClass(messageEl, 'show');
 
                     $.ajax({
                       url: "/announce.php",
@@ -133,7 +131,18 @@
                         "g-recaptcha-response": grecaptcha.getResponse()
                       }
                     }).done(function(data){
-                      console.log(data);
+                      if(data == 'Account public key already broadcasted') {
+                      	messageEl.innerHTML = 'Error!<br><span style="font-size:0.7em;">The public key for that account is already known to the network.</span>';
+                      } else {
+                        var result = $.parseJSON(data); console.log(data);
+                        if(data.errorCode == 4) {
+                      	  messageEl.innerHTML = 'Error!<br><span style="font-size:0.7em;">Transaction failed. Please check your data.</span>';
+                        } else {
+                          messageEl.innerHTML = 'Congratulations!<br><span style="font-size:0.7em;">You have successfully announced<br>your Horizon account.</span>';
+                        }
+                      }
+                      
+                      classie.addClass(messageEl, 'show');
                     });
                 }
             });
