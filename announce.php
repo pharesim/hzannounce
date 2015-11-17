@@ -64,6 +64,14 @@ if($resp->isSuccess())
 		  print_r($error);
 		}
 
-		echo $result;
+		$json = json_decode($result, true);
+		if(isset($json['errorCode'])) 
+		{
+		  echo 'Transaction error';
+		}
+		else
+		{
+		  echo $result;
+		}
 	}
 }
